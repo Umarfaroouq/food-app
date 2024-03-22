@@ -28,18 +28,20 @@ function Veggie() {
     };
 
     return (
+        <div>
         <Wrapper>
             <h3>Our Vegetarian Picks</h3>
             <Splide 
                 options={{
-                    perPage: 4,
+                    perPage: 3,
                     arrows: false,
                     pagination: false,
                     drag: "free",
                     gap: "5rem",
                 }}
             >
-                {veggie.map((recipe) => (
+                {veggie.map((recipe) => {
+                    return( 
                     <SplideSlide key={recipe.id}>
                         <Card>
                             <Link to={'/recipe/' + recipe.id}>
@@ -49,9 +51,11 @@ function Veggie() {
                             </Link>
                         </Card>
                     </SplideSlide>
-                ))}
+                    );
+                    })}
             </Splide>
         </Wrapper>
+        </div>
     );
 }
 
@@ -70,12 +74,12 @@ const Card = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Fixed typo here */
+        object-fit: cover; 
     }
 
     p {
         position: absolute;
-        z-index: 10; /* Fixed typo here */
+        z-index: 10; 
         left: 50%;
         bottom: 0%;
         transform: translate(-50%, 0%);

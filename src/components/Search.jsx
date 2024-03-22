@@ -48,9 +48,10 @@ input{
 }
 svg{
     position:absolute;
-    top;50%;
-    left:50%;
-    transform,:translate(100% ,-50%);
+    top:40%;
+    left:1rem;
+    transform,:translateY(-50%);
     color:white;
+    font-size:1.5rem;
 }`
 export default Search
